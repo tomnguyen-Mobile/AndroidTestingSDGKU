@@ -65,12 +65,19 @@ dependencies {
     testImplementation(libs.androidx.junit)
     testImplementation(libs.androidx.espresso.core)
     testImplementation(platform(libs.androidx.compose.bom))
+    testImplementation(libs.androidx.espresso.intents)
+    testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.compose.ui.test.junit4)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+
 
     // Instrumented tests (emulator / device)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.junit)
 
     // Hosts Compose UI tests (createComposeRule)

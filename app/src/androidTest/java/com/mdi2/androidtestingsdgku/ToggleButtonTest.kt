@@ -29,9 +29,11 @@ class ToggleButtonTest {
         val button = composeRule.onNodeWithTag(ToggleButtonTag.TAG)
         button.assertTextEquals("Tap me")
         button.performClick()
-        // Thread.sleep(1000)
+//        Thread.sleep(10000)
+
         button.assertTextEquals("Tapped")
         button.performClick()
+//        Thread.sleep(10000)
 
         button.assertTextEquals("Tap me")
     }

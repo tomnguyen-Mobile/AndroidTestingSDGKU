@@ -13,7 +13,7 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ToggleButtonTest">
+      <SelectionState runConfigName="emptyEmail_showsError()">
         <option name="selectionMode" value="DROPDOWN" />
         <DropdownSelection timestamp="2026-09-26T18:28:05.887671400Z">
           <Target type="DEFAULT_BOOT">
