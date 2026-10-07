@@ -2,7 +2,7 @@ name: Android Existing Tests
 
 on:
   push:
-    branches: [main, 'class4/**']
+    branches: [master, 'class4/**']
   pull_request:
     branches: [master]
   workflow_dispatch:
