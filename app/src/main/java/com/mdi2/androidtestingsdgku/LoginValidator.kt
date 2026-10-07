@@ -2,7 +2,9 @@ package com.mdi2.androidtestingsdgku
 
 object LoginValidator{
     enum class LoginError {
-        EMPTY_EMAIL, INVALID_EMAIL, SHORT_PASSWORD
+        EMPTY_EMAIL,
+        INVALID_EMAIL,
+        SHORT_PASSWORD
     }
 
     private val emailRegex = Regex("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")

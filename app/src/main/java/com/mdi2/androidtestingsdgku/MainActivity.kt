@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val loginButton = findViewById<MaterialButton>(R.id.loginButton)
 
         // this is for testing the app, delete when done
-        goToShop()
+//        goToShop()
 
         loginButton.setOnClickListener {
             titleEmail.error = null

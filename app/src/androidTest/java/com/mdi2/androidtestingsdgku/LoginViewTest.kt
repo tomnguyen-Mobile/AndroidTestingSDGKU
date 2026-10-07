@@ -20,11 +20,11 @@ import java.util.function.Predicate.not
 
 
 class LoginPage{
-    val emailTitle = onView(withId(R.id.emailTitle))
-    val passwordTitle = onView(withId(R.id.passwordTitle))
-    val emailInput = onView(withId(R.id.emailInput))
-    val passwordInput = onView(withId(R.id.passwordInput))
-    val loginButton = onView(withId(R.id.loginButton))
+    fun emailTitle() = onView(withId(R.id.emailTitle))
+    fun passwordTitle() = onView(withId(R.id.passwordTitle))
+    fun emailInput() = onView(withId(R.id.emailInput))
+    fun passwordInput() = onView(withId(R.id.passwordInput))
+    fun loginButton() = onView(withId(R.id.loginButton))
 }
 
 @RunWith(AndroidJUnit4::class)
@@ -46,26 +46,27 @@ class LoginViewTest {
 
     @Test
     fun loginScreen_showsAllComponents(){
-        loginPage.emailTitle.check(matches(isDisplayed()))
-        loginPage.passwordTitle.check(matches(isDisplayed()))
-        loginPage.emailInput.check(matches(isDisplayed()))
-        loginPage.passwordInput.check(matches(isDisplayed()))
-        loginPage.loginButton.check(matches(isDisplayed()))
+        loginPage.emailTitle().check(matches(isDisplayed()))
+        loginPage.passwordTitle().check(matches(isDisplayed()))
+        loginPage.emailInput().check(matches(isDisplayed()))
+        loginPage.passwordInput().check(matches(isDisplayed()))
+        loginPage.loginButton().check(matches(isDisplayed()))
     }
 
     @Test
     fun emptyEmail_showsError(){
-        onView(withId(R.id.emailInput)).perform(click())
+//        loginPage.emailInput()
+        loginPage.loginButton().perform(click())
+//        onView(withId(R.id.emailInput)).perform(click())
+        Thread.sleep(1000)
         onView(withId(R.id.emailTitle)).check(matches(hasTextInputLayoutError("Email is required")))
     }
 
     @Test
     fun loginWithValidCredentials_navigatesToShop(){
-        loginPage.emailInput.perform(typeText("tom@example.com"))
-        loginPage.passwordInput.perform(typeText("password123"))
-        loginPage.loginButton.perform(click())
-        loginPage.emailTitle.check(doesNotExist() )
-
-
+        loginPage.emailInput().perform(typeText("tom@example.com"))
+        loginPage.passwordInput().perform(typeText("password123"))
+        loginPage.loginButton().perform(click())
+        loginPage.emailTitle().check(doesNotExist() )
     }
 }
