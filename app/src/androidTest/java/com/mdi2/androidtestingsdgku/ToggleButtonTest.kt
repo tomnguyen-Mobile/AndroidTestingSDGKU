@@ -1,18 +1,14 @@
 package com.mdi2.androidtestingsdgku
 
-import android.R.attr.button
-import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertCountEquals
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextEquals
-import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithTag
-import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import org.junit.Rule
 import org.junit.Test
-import kotlin.concurrent.thread
 
 class ToggleButtonTest {
 //    @get: Rule val composeRule = createComposeRule()
@@ -48,8 +44,7 @@ class ToggleButtonTest {
     }
 
     @Test
-    fun CheckOutCartTest(){
-
+    fun checkOutCartTest(){
         composeRule.onNodeWithTag("add_1").performClick()
         composeRule.onNodeWithTag("add_1").performClick()
         composeRule.onNodeWithTag("add_1").performClick()
@@ -58,6 +53,16 @@ class ToggleButtonTest {
         button.performClick()
         composeRule.onNodeWithTag("cart_total").assertTextEquals("Total items: 3, Total price: $30.00")
     }
+
+    @Test
+    fun shoppingCartShowsAllElementsTest(){
+        composeRule.onNodeWithTag("shop_title").assertIsDisplayed()
+        composeRule.onNodeWithTag("cart_item_count", useUnmergedTree = true).assertTextEquals("Cart (0)")
+        composeRule.onNodeWithTag("go_to_cart_button").performClick()
+        composeRule.onNodeWithTag("cart_title").assertIsDisplayed()
+        composeRule.onNodeWithTag("empty_cart").assertIsDisplayed()
+    }
+}
 //    @Test
 //    fun buttonTogglesTextOnClick(){
 //        composeRule.setContent {
@@ -74,4 +79,3 @@ class ToggleButtonTest {
 //
 //        button.assertTextEquals("Tap me")
 //    }
-}
