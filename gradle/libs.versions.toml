@@ -13,6 +13,7 @@ composeBom = "2025.02.00"
 navigationCompose = "2.9.3"
 kotlin = "2.2.10"
 robolectric = "4.14.1"
+foundationLayout = "1.12.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +40,7 @@ androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-toolin
 
 mockk = { group= "io.mockk", name="mockk", version = "1.13.13"}
 kotlinx-coroutines-test = {group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-test", version="1.9.0"}
+androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "foundationLayout" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

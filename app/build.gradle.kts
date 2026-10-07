@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.mdi2.androidtestingsdgku"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.mdi2.androidtestingsdgku"
         minSdk = 26
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -46,6 +46,7 @@ android {
 dependencies {
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.compose.foundation.layout)
     implementation(libs.androidx.constraintlayout)
 
     // App
