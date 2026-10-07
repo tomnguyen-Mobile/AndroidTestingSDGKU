@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: [Android Existing Tests]
     types: [completed]
-    branches: [main]
+    branches: [master]
 
 permissions:
   actions: read
