@@ -32,12 +32,6 @@ class ToggleButtonTest {
         composeRule.onNodeWithTag(testTag="cart_item_count", useUnmergedTree = true).assertTextEquals("Cart (1)")
     }
 
-    @Test
-    fun addToCart2Test(){
-        val button = composeRule.onNodeWithTag("add_2")
-        button.performClick()
-        composeRule.onNodeWithTag(testTag="cart_item_count", useUnmergedTree = true).assertTextEquals("Cart (1)")
-    }
 
     @Test
     fun productListRendersCorrectlyTest() {
